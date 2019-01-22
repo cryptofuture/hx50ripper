@@ -2,7 +2,15 @@
 
 ![HX50 Photo Ripper ](screenshot-2019-01-22.png)
 
-### Add And Install From PPA
+### Features
+
+* Control recording
+* Control and display camera live preview
+* Control shooting
+* Save pictures
+* Control various request values
+
+### Add and install from PPA
 
 PPA is located [here](https://launchpad.net/~hda-me/)
 
