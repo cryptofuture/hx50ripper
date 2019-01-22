@@ -1,2 +1,2 @@
-# hx50ripper
-HX50 Photo Ripper - Control Your Camera Again
+# HX50 Photo Ripper
+hx50ripper - Control Your Camera 
