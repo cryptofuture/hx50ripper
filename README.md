@@ -1,5 +1,7 @@
 ## HX50 Photo Ripper - Control Your Camera
 
+![HX50 Photo Ripper ](screenshot-2019-01-22.png)
+
 ### Add and install from PPA
 
 PPA is located [here](https://launchpad.net/~hda-me/)
