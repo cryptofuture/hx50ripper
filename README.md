@@ -45,12 +45,12 @@ It works using [Camera Remote API](https://developer.sony.com/develop/cameras/)
 
 You can check [light version](https://github.com/cryptofuture/hx50ripper/tree/master/light) for easier understanding or for request testing
 
-* actions.actTakePicture - Takes Picture
-* actions.startLive - Starts LiveView
-* actions.stopLive - Stops LiveView
-* actions.startMovieRec - Starts Record
-* actions.stopMovieRec - Stops Record
-* setShootMode - Switches Shoot Mode
+* `actions.actTakePicture` - Takes Picture
+* `actions.startLive` - Starts LiveView
+* `actions.stopLive` - Stops LiveView
+* `actions.startMovieRec` - Starts Recording
+* `actions.stopMovieRec` - Stops Recording
+* `setShootMode` - Switch Shoot Mode
 
 Live Preview Window works using [hydra](https://github.com/gnd/hydra) and I ship [forked version](https://github.com/cryptofuture/hydra), since it uses ENVs instead of hardcoded values. Also hydra works only in Linux
 
