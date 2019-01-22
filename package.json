@@ -1,0 +1,13 @@
+{
+  "name": "hx50ripper",
+  "version": "1.0.0",
+  "devDependencies": {
+    "nw": "^*",
+    "nw-builder": "^*"
+  },
+  "scripts": {
+    "dev": "nw src/",
+    "prod": "nwbuild --platforms win32,win64,osx64,linux32,linux64 --buildDir dist/ src/",
+    "prod-xp": "nwbuild --platforms win32,win64 --version 0.14.7 --buildDir dist-xp/ src/"
+  }
+}

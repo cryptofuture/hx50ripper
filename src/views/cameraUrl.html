@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/minstyle.io.css"> <!-- https://minstyle.io v0.2.3 -->
+    <link rel="stylesheet" href="../styles/light.css">
+    <script src="../app/light.js"></script>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <div class="col-s-12">
+                <span class="ms-badge ms-gradient">
+                    <script>echo("Camera URL")</script></span>
+                <input type="url" id="cameraUrl" class="ms-yellow" style="background-color:#d4ebcd">
+            </div>
+            <div class="col-s-12">
+                <input class="ms-btn ms-yellow ms-large" type="submit" id="set" onclick="global.cameraUrl = document.getElementById('cameraUrl').value;prefs.setCameraUrl();nw.Window.get().close();">
+                <a class="ms-btn ms-blue ms-large" onclick="prefs.setCameraUrlDefault();nw.Window.get().close();">
+                    <script>echo("Default")</script></a>
+                <a class="ms-btn ms-green ms-large" onclick="prefs.showCurrentCameraUrl();">
+                    <script>echo("Current Value")</script></a>
+                <a class="ms-btn ms-border-bottom ms-red ms-large" onclick="nw.Window.get().close()">
+                    <script>echo("Cancel")</script></a>
+            </div>
+        </fieldset>
+    </form>
+    <script>
+        document.getElementById("set").value = lang.echo("Set");
+        document.title = lang.echo("Camera URL Configuration");
+        document.getElementById("cameraUrl").placeholder = lang.echo("For ex.: http://10.0.0.1:10000/camera");
+    </script>
+</body>
+
+</html>

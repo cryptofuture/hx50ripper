@@ -1,0 +1,19 @@
+body {
+  background-color: #312b2b; 
+  background-image: url(../assets/icon.svg); 
+  background-repeat: no-repeat; 
+  background-size: 750px;
+  background-position: center 0%;
+}
+#previewControl {
+  margin-top: 25px; 
+  margin-left: 408px;
+}
+#recordingControl {
+    margin-top: 55px; 
+    margin-left: 54px;
+}
+#takePictureControl {
+    margin-top: 75px; 
+    margin-left: 44px;
+}

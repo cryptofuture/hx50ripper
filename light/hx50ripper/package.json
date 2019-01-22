@@ -1,0 +1,11 @@
+{
+  "name": "hx50ripper",
+  "version": "0.0.1",
+  "description": "HX50 Photo Ripper",
+  "main": "index.js",
+  "author": "admin@hda.me",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "request": "^*"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "hx50ripper",
+  "version": "1.0.0",
+  "description": "HX50 Photo Ripper",
+  "main": "views/index.html",
+  "author": "admin@hda.me",
+  "license": "GPL-3.0",
+  "window": {
+    "min_width": 800,
+    "max_width": 800,
+    "min_height": 600,
+    "max_height": 600,
+    "icon": "assets/icon.png"
+  },
+  "dependencies": {
+    "fs-extra": "^*",
+    "request": "^*",
+    "y18n": "^*"
+  }
+}

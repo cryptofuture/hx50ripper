@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HX50 Photo Ripper</title>
+    <link rel="stylesheet" href="../styles/minstyle.io.css"> <!-- https://minstyle.io v0.2.3 -->
+    <link rel="stylesheet" href="../styles/common.css">
+    <script src="../app/index.js"></script>
+    <script>echo("previewControlStyleFix")</script>
+</head>
+
+<body>
+    <button id="takePictureControl" class="ms-btn ms-rounded ms-yellow ms-large" onclick="actions.actTakePicture()">
+        <script>echo("Take Picture")</script></button>
+    <div id="recordingControl">
+        <button class="ms-btn ms-red" onclick="actions.startMovieRec()">
+            <script>echo("Start Recording")</script></button><br>
+        <button class="ms-btn" onclick="actions.stopMovieRec()">
+            <script>echo("Stop Recording")</script></button>
+    </div>
+    <div id="previewControl">
+        <button class="ms-btn ms-green" onclick="actions.startLive()">
+            <script>echo("Start Live Preview")</script></button><br>
+        <button class="ms-btn" onclick="actions.stopLive()">
+            <script>echo("Stop Live Preview")</script></button>
+        <input style="display:none;" id="savePictureLocation" type="file" nwdirectory />
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+node_modules
+dist/linux32
+dist/linux64
+dist/osx64
+dist/win64
+dist/win32
+dist-xp/win32
+dist-xp/win64
+src/node_modules
+light/node_modules
+light/package-lock.json
+package-lock.json
+src/package-lock.json

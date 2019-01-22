@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/minstyle.io.css"> <!-- https://minstyle.io v0.2.3 -->
+    <link rel="stylesheet" href="../styles/light.css">
+    <script src="../app/light.js"></script>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <div class="col-s-12">
+                <span class="ms-badge ms-gradient">
+                    <script>echo('Save Images automatically?')</script></span><br>
+                <button class="ms-btn ms-green" onclick="prefs.savePicture(true);">
+                    <script>echo('Yes')</script></button>
+                <button class="ms-btn ms-red" onclick="prefs.savePicture(false);">
+                    <script>echo('No')</script></button>
+            </div>
+            <div class="col-s-12">
+                <span class="ms-badge ms-gradient">
+                    <script>echo('Select Location To Save Images')</script></span><br>
+                <a class="ms-btn ms-yellow" onclick="prefs.savePictureLocationSelect(); nw.Window.get().close();">
+                    <script>echo('Select Location')</script></a>
+                <a class="ms-btn ms-blue" onclick="prefs.setSavePictureDefaultLocation();nw.Window.get().close();">
+                    <script>echo('Default')</script></a>
+                <a class="ms-btn ms-green" onclick="prefs.savePictureCurrentLocation();">
+                    <script>echo('Current Value')</script></a>
+                <br>
+                <a class="ms-btn ms-border-bottom ms-red ms-large" onclick="nw.Window.get().close()">
+                    <script>echo('Close')</script></a>
+            </div>
+        </fieldset>
+    </form>
+    <script>
+        document.title = lang.echo("Image Saving Configuration");
+    </script>
+</body>
+
+</html>
