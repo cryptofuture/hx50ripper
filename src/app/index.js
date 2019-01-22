@@ -198,7 +198,7 @@ if (platform.includes("darwin")) {
     help.append(new nw.MenuItem({
         label: mHIW,
         click: function () {
-            gui.Window.open('https://github.com/cryptofuture/hx50ripper/', {
+            gui.Window.open('https://github.com/cryptofuture/hx50ripper#how-it-works', {
                 position: 'center',
                 width: 800,
                 height: 600
@@ -208,7 +208,7 @@ if (platform.includes("darwin")) {
     help.append(new nw.MenuItem({
         label: mDonate,
         click: function () {
-            gui.Window.open('https://github.com/cryptofuture/hx50ripper/', {
+            gui.Window.open('https://github.com/cryptofuture/hx50ripper#donation', {
                 position: 'center',
                 width: 800,
                 height: 600
@@ -228,13 +228,13 @@ if (platform.includes("darwin")) {
     help.append(new nw.MenuItem({
         label: mHIW,
         click: function () {
-            gui.Shell.openExternal('https://github.com/cryptofuture/hx50ripper/');
+            gui.Shell.openExternal('https://github.com/cryptofuture/hx50ripper#how-it-works');
         }
     }));
     help.append(new nw.MenuItem({
         label: mDonate,
         click: function () {
-            gui.Shell.openExternal('https://github.com/cryptofuture/hx50ripper/');
+            gui.Shell.openExternal('https://github.com/cryptofuture/hx50ripper#donation');
         }
     }));
 }

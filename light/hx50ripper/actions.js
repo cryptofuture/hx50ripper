@@ -1,5 +1,5 @@
 const request = require("request");
-fs = require('fs');
+const fs = require('fs');
 const settings = JSON.parse(fs.readFileSync(process.cwd() + '/settings.js', 'utf-8'));
 var mRequestId = 1;
 function id() {
