@@ -12,17 +12,17 @@
 
 ### Add and install from PPA
 
-PPA is located [here](https://launchpad.net/~hda-me/)
+PPA is located [here](https://launchpad.net/~hda-me/+archive/ubuntu/hxripper)
 
 You can add and install any available module with:
 
 ```bash
-sudo apt-add-repository ppa:hda-me/
+sudo add-apt-repository ppa:hda-me/hxripper
 sudo apt-get update
-sudo apt-get install 
+sudo apt-get install hx50ripper
 ```
 
-Package names:
+Package name: hx50ripper 
 
 ### Cross-platform Releases
 
