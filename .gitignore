@@ -4,8 +4,15 @@ dist/linux64
 dist/osx64
 dist/win64
 dist/win32
+dist/hx50ripper-linux32.tar.xz
+dist/hx50ripper-linux64.tar.xz
+dist/hx50ripper-osx64.zip
+dist/hx50ripper-win32.zip
+dist/hx50ripper-win64.zip
 dist-xp/win32
 dist-xp/win64
+dist-xp/hx50ripper-winxp-x64.zip
+dist-xp/hx50ripper-winxp-x32.zip
 src/node_modules
 light/node_modules
 light/package-lock.json
