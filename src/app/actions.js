@@ -131,9 +131,9 @@ module.exports = {
             new Notification(lang.echo("Live preview activated"), alert);
           } else if (platform.includes("linux")) {
             if (process.arch == "x64") {
-              require('child_process').exec(nw.__dirname + '/bin/hydra-x64 --primary-res 640x480');
+              require('child_process').exec((process.execPath).slice(0, -11) + '/bin/hydra-x64 --primary-res 640x480');
             } else {
-              require('child_process').exec(nw.__dirname + '/bin/hydra-x32 --primary-res 640x480');
+              require('child_process').exec((process.execPath).slice(0, -11) + '/bin/hydra-x64 --primary-res 640x480');
             }
             const alert = {
               icon: iconPath,
