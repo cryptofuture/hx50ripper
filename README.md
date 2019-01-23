@@ -56,7 +56,7 @@ Live Preview Window works using [hydra](https://github.com/gnd/hydra) and I ship
 
 ### Building Cross-platform Releases
 
-Use `npm run prod` or `npm run prod-xp` for Windows XP binaries
+Use `npm run prod` for Windows >= 7 and macOS, `npm run prod-xp` for Windows XP binaries, and `npm run prod-linux` for Linux binaries
 
 ### Donation
 
