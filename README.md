@@ -1,6 +1,6 @@
 ## HX50 Photo Ripper - Control Your Camera
 
-![HX50 Photo Ripper ](screenshot-2019-01-22.png)
+[![HX50 Photo Ripper](https://img.youtube.com/vi/wZWGmZyN3TU/0.jpg)](https://www.youtube.com/watch?v=wZWGmZyN3TU)
 
 ### Features
 
