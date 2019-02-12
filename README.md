@@ -52,7 +52,7 @@ You can check [light version](https://github.com/cryptofuture/hx50ripper/tree/ma
 * `actions.stopMovieRec` - Stops Recording
 * `setShootMode` - Switch Shoot Mode
 
-Live Preview Window works using [hydra](https://github.com/gnd/hydra) and I ship [forked version](https://github.com/cryptofuture/hydra), since it uses ENVs instead of hardcoded values. Also hydra works only in Linux
+Live Preview Window works using [hydra](https://github.com/gnd/hydra)
 
 ### Building Cross-platform Releases
 

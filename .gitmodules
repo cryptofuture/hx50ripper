@@ -1,0 +1,3 @@
+[submodule "src/bin/liveView"]
+	path = src/bin/liveView
+	url = https://github.com/cryptofuture/liveView
