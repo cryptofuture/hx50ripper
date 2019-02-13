@@ -1,5 +1,5 @@
 const request = require("request");
-var gui = window.require('nw.gui');
+const gui = window.require('nw.gui');
 const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');

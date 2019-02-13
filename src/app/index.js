@@ -2,6 +2,7 @@ const os = require('os');
 const platform = os.platform();
 const fs = require('fs-extra');
 const path = require('path');
+const gui = window.require('nw.gui');
 
 if (platform.includes("win32")) {
     var hxripper = process.env.APPDATA + '\\hxripper';
