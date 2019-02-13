@@ -27,10 +27,10 @@ Package name: hx50ripper
 
 ### Cross-platform Releases
 
-1. GNU/Linux - [64 bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.0/hx50ripper-linux64.tar.xz) [32bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.0/hx50ripper-linux32.tar.xz)
-2. Windows 7 and later - [64 bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.0/hx50ripper-win64.zip) [32bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.0/hx50ripper-win32.zip)
-3. Windows XP and older(?) - [32bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.0/hx50ripper-winxp-x32.zip) [64 bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.0/hx50ripper-winxp-x64.zip)
-4. macOS - [64 bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.0/hx50ripper-osx64.zip)
+1. GNU/Linux - [64 bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.1/hx50ripper-linux64.tar.xz) [32bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.1/hx50ripper-linux32.tar.xz)
+2. Windows 7 and later - [64 bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.1/hx50ripper-win64.zip) [32bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.1/hx50ripper-win32.zip)
+3. Windows XP and older(?) - [32bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.1/hx50ripper-winxp-x32.zip) [64 bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.1/hx50ripper-winxp-x64.zip)
+4. macOS - [64 bit](https://github.com/cryptofuture/hx50ripper/releases/download/v1.0.1/hx50ripper-osx64.zip)
 
 ### Preferences
 
