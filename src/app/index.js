@@ -41,6 +41,7 @@ if (platform.includes("darwin")) {
 }
 
 let mSLP = lang.echo('Start Live Preview');
+let mHydra = lang.echo('Start Live Preview via Hydra');
 let mFLP = lang.echo('Stop Live Preview');
 let mQuit = lang.echo('Quit');
 let mPreview = lang.echo('Preview');
@@ -55,6 +56,7 @@ let mSR = lang.echo('Configure Shooting Response');
 let mRR = lang.echo('Configure Recording Response');
 let mTimeout = lang.echo('Configure Request Timeout');
 let mSCURL = lang.echo('Set Camera URL');
+let mliveView = lang.echo('Set Live Preview URL');
 let mISC = lang.echo('Image Saving Configuration');
 let mSettings = lang.echo('Settings');
 let mCGHI = lang.echo('Create New GitHub Issue');
@@ -71,6 +73,15 @@ preview.append(new nw.MenuItem({
         actions.startLive();
     }
 }));
+if (platform.includes("linux")) {
+    preview.append(new nw.MenuItem({
+        label: mHydra,
+        click: function () {
+            actions.startLiveHydra();
+        }
+    }));
+} else {
+}
 preview.append(new nw.MenuItem({
     label: mFLP,
     key: 'l',
@@ -166,6 +177,12 @@ settings.append(new nw.MenuItem({
     label: mSCURL,
     click: function () {
         prefs.cameraUrlWindow();
+    }
+}));
+settings.append(new nw.MenuItem({
+    label: mliveView,
+    click: function () {
+        prefs.liveViewUrlWindow();
     }
 }));
 settings.append(new nw.MenuItem({

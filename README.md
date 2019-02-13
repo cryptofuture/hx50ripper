@@ -6,6 +6,7 @@
 
 * Control recording
 * Control and display camera live preview
+* Camera live preview using [hydra](https://github.com/gnd/hydra) (Linux only)
 * Control shooting
 * Save pictures
 * Control various request values
@@ -33,11 +34,7 @@ Package name: hx50ripper
 
 ### Preferences
 
-You can set most preferences using Settings Menu in HX50 Photo Ripper. But you need to preset envs for [hydra](https://github.com/gnd/hydra). Hydra used for Live Preview Window and works only in Linux.
-
-Export liveview path for ex.: `export CAM_LV="http://10.0.0.1:60152"`
-
-Export save folder path for ex.: `export SAVE_LV="/mnt/LV/sony_%05d.jpeg"`
+You can set most preferences using Settings Menu in HX50 Photo Ripper.
 
 ### How It Works
 
@@ -52,9 +49,9 @@ You can check [light version](https://github.com/cryptofuture/hx50ripper/tree/ma
 * `actions.stopMovieRec` - Stops Recording
 * `setShootMode` - Switch Shoot Mode
 
-Live Preview Window works using [hydra](https://github.com/gnd/hydra)
-
 ### Building Cross-platform Releases
+
+First activate submodule with `git submodule init` and `git submodule update`
 
 Use `npm run prod` for Windows >= 7 and macOS, `npm run prod-xp` for Windows XP binaries, and `npm run prod-linux` for Linux binaries
 

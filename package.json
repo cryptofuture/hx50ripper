@@ -7,8 +7,8 @@
   },
   "scripts": {
     "dev": "nw src/",
-    "prod": "nwbuild --platforms win32,win64,osx64 --buildDir dist/ src/",
-    "prod-linux": "nwbuild --platforms linux32,linux64 --buildDir dist/ src/ && cp -R src/bin/ dist/hx50ripper/linux64/ &&  cp -R src/bin/ dist/hx50ripper/linux32/",
-    "prod-xp": "nwbuild --platforms win32,win64 --version 0.14.7 --buildDir dist-xp/ src/"
+    "prod": "nwbuild --platforms win32,win64,osx64 --buildDir dist/ src/ && cp -R src/bin/liveView/liveView/win32/liveView/ dist/hx50ripper/win32/bin/ && cp -R src/bin/liveView/liveView/win32/liveView/ dist/hx50ripper/win64/bin/ && rm -rf dist/hx50ripper/osx64/hx50ripper.app/Contents/Resources/app.nw/bin/ && cp -R src/bin/liveView/liveView/osx64/liveView/ dist/hx50ripper/osx64/hx50ripper.app/Contents/Resources/app.nw/bin/",
+    "prod-linux": "nwbuild --platforms linux32,linux64 --buildDir dist/ src/ && cp -R src/bin/liveView/liveView/linux64/liveView/ dist/hx50ripper/linux64/bin/ && cp src/bin/hydra-x64 dist/hx50ripper/linux64/bin/ && cp -R src/bin/liveView/liveView/linux32/liveView/ dist/hx50ripper/linux32/bin/ && cp src/bin/hydra-x32 dist/hx50ripper/linux32/bin/",
+    "prod-xp": "nwbuild --platforms win32,win64 --version 0.14.7 --buildDir dist-xp/ src/ && cp -R src/bin/liveView/liveView/win32/liveView/ dist-xp/hx50ripper/win32/bin/ && cp -R src/bin/liveView/liveView/win32/liveView/ dist-xp/hx50ripper/win64/bin/"
   }
 }

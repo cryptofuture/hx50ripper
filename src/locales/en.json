@@ -65,6 +65,12 @@
   "Live preview started, but hydra not supported": "Live preview started, but hydra not supported",
   "Configure Request Timeout": "Configure Request Timeout",
   "Request Timeout Configuration": "Request Timeout Configuration",
-  "For ex.: 8000 (8 seconds)": "For ex.: 8000 (8 seconds)"
-
+  "For ex.: 8000 (8 seconds)": "For ex.: 8000 (8 seconds)",
+  "Live Preview URL is: ": "Live Preview URL is: ",
+  "Live Preview URL": "Live Preview URL",
+  "Live Preview URL Configuration": "Live Preview URL Configuration",
+  "For ex.: http://10.0.0.1:60152": "For ex.: http://10.0.0.1:60152",
+  "Set Live Preview URL": "Set Live Preview URL",
+  "Live preview started": "Live preview started",
+  "Start Live Preview via Hydra": "Start Live Preview via Hydra"
 }

@@ -1,5 +1,6 @@
 {
   "cameraUrl": "http://10.0.0.1:10000/camera",
+  "liveViewUrl": "http://10.0.0.1:60152",
   "takePictureResponse": 1200,
   "recMovieResponse": 1000,
   "autoSavePicture": true,

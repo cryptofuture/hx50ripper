@@ -65,5 +65,12 @@
   "Live preview started, but hydra not supported": "Пред. просмотр запущен, но hydra не поддерживается",
   "Configure Request Timeout": "Настройка timeout запроса",
   "Request Timeout Configuration": "Настройка timeout запроса",
-  "For ex.: 8000 (8 seconds)": "Например: 8000 (8 секунд)"
+  "For ex.: 8000 (8 seconds)": "Например: 8000 (8 секунд)",
+  "Live Preview URL is: ": "URL пред. просмотра: ",
+  "Live Preview URL": "URL пред. просмотра",
+  "Live Preview URL Configuration": "Настройка URL пред. просмотра",
+  "For ex.: http://10.0.0.1:60152": "Например: http://10.0.0.1:60152",
+  "Set Live Preview URL": "Изменить URL пред. просмотра",
+  "Live preview started": "Пред. просмотр запущен",
+  "Start Live Preview via Hydra": "Начать пред. просмотр в Hydra"
 }

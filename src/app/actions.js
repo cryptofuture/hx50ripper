@@ -4,23 +4,34 @@ const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
 const platform = os.platform();
+const exec = require('child_process').exec;
 
 if (platform.includes("win32")) {
   var hxripper = process.env.APPDATA + '\\hxripper';
   var configFolderHome = hxripper + '\\config';
   var settingsFile = configFolderHome + '\\settings.json';
+  var homeFolder = process.env.APPDATA;
 } else if (platform.includes("darwin")) {
   var hxripper = process.env.HOME + '/Library/hxripper';
   var configFolderHome = hxripper + '/config';
   var settingsFile = configFolderHome + '/settings.json';
+  var homeFolder = process.env.HOME;
 } else if (platform.includes("linux")) {
   var hxripper = process.env.HOME + "/.hxripper";
   var configFolderHome = hxripper + '/config';
   var settingsFile = configFolderHome + '/settings.json';
+  var homeFolder = process.env.HOME;
 }
 
 const lang = require('../app/lang');
 const settings = JSON.parse(fs.readFileSync(settingsFile, 'utf-8'));
+if (settings.savePictureLocation == "") {
+  var savePicLocation = path.normalize(homeFolder + '/') + (new Date().toISOString() + '.jpg').split(':').join('-');
+  var saveLivePicLocation = path.normalize(homeFolder + '/');
+} else {
+  var savePicLocation = path.normalize(settings.savePictureLocation + '/') + (new Date().toISOString() + '.jpg').split(':').join('-');
+  var saveLivePicLocation = path.normalize(settings.savePictureLocation + '/');
+}
 const iconPath = 'file://' + nw.__dirname + '/assets/icon.png';
 var mRequestId = 1;
 
@@ -42,16 +53,6 @@ function setShootMode(mode) {
 module.exports = {
   actTakePicture: function () {
     setShootMode("still");
-    if (platform.includes("win32")) {
-      var homeFolder = process.env.APPDATA;
-    } else {
-      var homeFolder = process.env.HOME;
-    }
-    if (settings.savePictureLocation == "") {
-      var savePicLocation = path.normalize(homeFolder + '/') + (new Date().toISOString() + '.jpg').split(':').join('-');
-    } else {
-      var savePicLocation = path.normalize(settings.savePictureLocation + '/') + (new Date().toISOString() + '.jpg').split(':').join('-');
-    }
     const options = {
       uri: settings.cameraUrl,
       timeout: settings.connectionTimeout,
@@ -111,6 +112,63 @@ module.exports = {
       method: 'POST',
       json: true
     };
+    if (settings.liveViewUrl == undefined) {
+      var liveViewUrl = 'http://10.0.0.1:60152';
+    } else {
+      var liveViewUrl = settings.liveViewUrl;
+    }
+    request(options, function (error, response, body) {
+      //console.log(body.result[0]);
+      try {
+        if (typeof body.result == 'undefined') {
+          alert("Connection was successful, but camera returned error");
+        } else {
+          if (platform.includes("win32")) {
+            process.env.CAM_LV = liveViewUrl;
+            exec((process.execPath).slice(0, -15) + '\\bin\\liveView.exe');
+            const alert = {
+              icon: iconPath,
+              body: lang.echo("Live preview started")
+            };
+            new Notification(lang.echo("Live preview activated"), alert);
+          } else if (platform.includes("darwin")) {
+            process.env.CAM_LV = liveViewUrl;
+            exec(global.__dirname + '/bin/liveView');
+            const alert = {
+              icon: iconPath,
+              body: lang.echo("Live preview started")
+            };
+            new Notification(lang.echo("Live preview activated"), alert);
+          } else if (platform.includes("linux")) {
+            process.env.CAM_LV = liveViewUrl;
+            exec((process.execPath).slice(0, -11) + '/bin/liveView');
+            const alert = {
+              icon: iconPath,
+              body: lang.echo("Live preview started")
+            };
+            new Notification(lang.echo("Live preview activated"), alert);
+          }
+        }
+      } catch (e) {
+        if (e) {
+          alert(lang.echo("Connection timeout.\nCheck Wi-Fi connection and/or Camera URL settings"));
+        }
+      }
+    });
+  },
+  startLiveHydra: function () {
+    const options = {
+      uri: settings.cameraUrl,
+      timeout: settings.connectionTimeout,
+      body: { "method": "startLiveview", "params": [], "id": id(), "version": "1.0" },
+      method: 'POST',
+      json: true
+    };
+    if (settings.liveViewUrl == undefined) {
+      var liveViewUrl = 'http://10.0.0.1:60152';
+    } else {
+      var liveViewUrl = settings.liveViewUrl;
+    }
     request(options, function (error, response, body) {
       //console.log(body.result[0]);
       try {
@@ -130,10 +188,13 @@ module.exports = {
             };
             new Notification(lang.echo("Live preview activated"), alert);
           } else if (platform.includes("linux")) {
+            liveViewUrl = liveViewUrl.replace('http://', '');
+            var newSaveLivePicLocation = saveLivePicLocation + path.normalize(new Date().toISOString().split(':').join('-') + '/');
+            fs.mkdirSync(newSaveLivePicLocation);
             if (process.arch == "x64") {
-              require('child_process').exec((process.execPath).slice(0, -11) + '/bin/hydra-x64 --primary-res 640x480');
+              exec((process.execPath).slice(0, -11) + '/bin/hydra-x64 --primary-res 640x480 --cam-link ' + liveViewUrl + ' --save-file sony_%05d.jpeg --save-dir ' + newSaveLivePicLocation);
             } else {
-              require('child_process').exec((process.execPath).slice(0, -11) + '/bin/hydra-x64 --primary-res 640x480');
+              exec((process.execPath).slice(0, -11) + '/bin/hydra-x32 --primary-res 640x480 --cam-link ' + liveViewUrl + ' --save-file sony_%05d.jpeg --save-dir ' + newSaveLivePicLocation);
             }
             const alert = {
               icon: iconPath,
@@ -164,27 +225,30 @@ module.exports = {
           alert(lang.echo("Connection was successful, but camera returned error"));
         } else {
           if (platform.includes("win32")) {
+            exec('taskkill /F /IM liveView.exe');
             const alert = {
               icon: iconPath,
               body: lang.echo("Live preview stopped")
             };
             new Notification(lang.echo("Live preview deactivated"), alert);
           } else if (platform.includes("darwin")) {
+            exec('killall -9 liveView');
             const alert = {
               icon: iconPath,
               body: lang.echo("Live preview stopped")
             };
             new Notification(lang.echo("Live preview deactivated"), alert);
           } else if (platform.includes("linux")) {
-            var killAll = require('child_process');
             if (process.arch == "x64") {
-              killAll.exec('killall -15 hydra-x64');
+              exec('killall -9 liveView');
+              exec('killall -15 hydra-x64');
             } else {
-              killAll.exec('killall -15 hydra-x32');
+              exec('killall -9 liveView');
+              exec('killall -15 hydra-x32');
             }
             const alert = {
               icon: iconPath,
-              body: lang.echo("hydra was terminated")
+              body: lang.echo("Live preview stopped")
             };
             new Notification(lang.echo("Live preview process terminated"), alert);
           }

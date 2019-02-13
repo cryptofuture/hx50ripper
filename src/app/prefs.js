@@ -51,6 +51,32 @@ module.exports = {
         fs.writeFileSync(settingsFile, JSON.stringify(settings, null, 2), 'utf-8');
         alert(lang.echo("Camera URL is: ") + settings.cameraUrl + lang.echo(" (default)"));
     },
+    setLiveViewUrl: function () {
+        settings.liveViewUrl = global.liveViewUrl;
+        if (global.liveViewUrl.startsWith("http")) {
+            fs.writeFileSync(settingsFile, JSON.stringify(settings, null, 2), 'utf-8');
+            alert(lang.echo("Live Preview URL is: ") + global.liveViewUrl);
+        }
+        else {
+            alert(lang.echo("Doesn't look like valid Live Preview URL"));
+        }
+    },
+    liveViewUrlWindow: function () {
+        gui.Window.open('views/liveViewUrl.html', {
+            focus: true,
+            position: 'center',
+            width: 800,
+            height: 600
+        });
+    },
+    showCurrentLiveViewUrl: function () {
+        alert(settings.liveViewUrl);
+    },
+    setLiveViewUrlDefault: function () {
+        settings.liveViewUrl = 'http://10.0.0.1:60152';
+        fs.writeFileSync(settingsFile, JSON.stringify(settings, null, 2), 'utf-8');
+        alert(lang.echo("Live Preview URL is: ") + settings.liveViewUrl + lang.echo(" (default)"));
+    },
     setShootingResponse: function () {
         settings.takePictureResponse = global.shootingResponse;
         if (isPositiveInteger(global.shootingResponse) == true) {
